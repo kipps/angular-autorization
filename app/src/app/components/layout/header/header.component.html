@@ -1,5 +1,29 @@
-<header class="header">
-  <h1>
-    <a href="/">Angular autorization</a>
-  </h1>
+<header class="header [ flex space-between wrp ] ">
+  <div class="flex v-center">
+    <h1 class="header__brand [ mr-40 ] ">
+      <a href="/">Angular autorization</a>
+    </h1>
+
+    <nav>
+      <ul class="header__navigation [ flex v-center mr-32 ] ">
+        <li>
+          <a routerLink="/events" routerLinkActive="active">Events</a>
+        </li>
+        <li>
+          <a routerLink="/special" routerLinkActive="active">Users</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <nav>
+    <ul class="header__userControll [ flex v-cnter font small ] ">
+      <li>
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li>
+        <a routerLink="/registration" routerLinkActive="active">Registration</a>
+      </li>
+    </ul>
+  </nav>
 </header>
