@@ -1,0 +1,37 @@
+@each $name, $size in $indents {
+  .m{
+    &t-#{$name} {
+      margin-top: $size !important;
+    }
+    &b-#{$name} {
+      margin-bottom: $size !important;
+    }
+    &r-#{$name} {
+      margin-right: $size !important;
+    }
+    &l-#{$name} {
+      margin-left: $size !important;
+    }
+  }
+  .p{
+    &t-#{$name} {
+      padding-top: $size;
+    }
+    &b-#{$name} {
+      padding-bottom: $size;
+    }
+    &r-#{$name} {
+      margin-right: $size !important;
+    }
+    &l-#{$name} {
+      margin-left: $size !important;
+    }
+  }
+}
+
+@each $name, $arrg in $opacity {
+    .opacity-#{$name} {
+      opacity: $arrg;
+    }
+
+}
