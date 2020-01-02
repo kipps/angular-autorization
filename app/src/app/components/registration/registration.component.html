@@ -1,0 +1,24 @@
+<form class="form">
+  <div class="mb-32">
+    <h2 class="mb-32">Form of registration</h2>
+
+    <mat-form-field class="full-w">
+      <input matInput placeholder="Email" name="email" [(ngModel)]="registerUserData.email" [formControl]="emailFormControl">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-w">
+      <input matInput placeholder="Password" type='password' [(ngModel)]="registerUserData.password" name="password" [formControl]="passFormControl">
+      <mat-error *ngIf="passFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button (click)="registerUser()" mat-flat-button color="primary">Register</button>
+</form>

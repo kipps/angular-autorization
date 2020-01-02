@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+}
+
+$color: rgba(black, .2);
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: $color;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: $color;
+}

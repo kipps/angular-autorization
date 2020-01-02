@@ -1,0 +1,15 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-max-size: 16px;
+  font-min-size: 11px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font {
+  &.small {
+    font-size: 0.8rem;
+  }
+}
