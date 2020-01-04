@@ -1,1 +1,9 @@
-<p>special-events works!</p>
+<div *ngFor="let event of specialEvents"  class="mb-24">
+  <header>
+    <h5>{{event.name}}</h5>
+  </header>
+  <section>Description of special</section>
+  <footer>
+    {{event.date | date: 'shortDate'}}
+  </footer>
+</div>

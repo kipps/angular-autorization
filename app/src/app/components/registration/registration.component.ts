@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
 import {AuthorizationServiceService} from '../../services/authorization-service.service';
 
@@ -20,7 +21,7 @@ export class RegistrationComponent implements OnInit {
     Validators.required,
   ]);
 
-  constructor(private _auth: AuthorizationServiceService) {
+  constructor(private _auth: AuthorizationServiceService, private _router: Router) {
   }
 
   ngOnInit() {
@@ -28,6 +29,12 @@ export class RegistrationComponent implements OnInit {
 
   registerUser() {
     this._auth.registerUser(this.registerUserData)
-      .subscribe(res => console.log(res), err => console.log(err));
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          this._router.navigate(['/special']);
+        },
+          err => console.log(err));
   }
 }

@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { EventsComponent } from './components/events/events.component';
 import { SpecialEventsComponent } from './components/special-events/special-events.component';
 import {AuthorizationServiceService} from './services/authorization-service.service';
+import {EventService} from './services/event.service';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import {AuthorizationServiceService} from './services/authorization-service.serv
     ReactiveFormsModule,
     MatButtonModule
   ],
-  providers: [AuthorizationServiceService],
+  providers: [AuthorizationServiceService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
