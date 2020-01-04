@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 // angular material
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -14,14 +14,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 
 // custom components
-import { HeaderComponent } from './components/layout/header/header.component';
-import { FooterComponent } from './components/layout/footer/footer.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { LoginComponent } from './components/login/login.component';
-import { EventsComponent } from './components/events/events.component';
-import { SpecialEventsComponent } from './components/special-events/special-events.component';
-import {AuthorizationServiceService} from './services/authorization-service.service';
+import {HeaderComponent} from './components/layout/header/header.component';
+import {FooterComponent} from './components/layout/footer/footer.component';
+import {RegistrationComponent} from './components/registration/registration.component';
+import {LoginComponent} from './components/login/login.component';
+import {EventsComponent} from './components/events/events.component';
+import {SpecialEventsComponent} from './components/special-events/special-events.component';
+import {AuthorizationService} from './services/authorization.service';
 import {EventService} from './services/event.service';
+import {AuthorizationGuard} from './guards/authorization.guard';
+import {TokenInterceptorService} from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -46,7 +48,14 @@ import {EventService} from './services/event.service';
     ReactiveFormsModule,
     MatButtonModule
   ],
-  providers: [AuthorizationServiceService, EventService],
+  providers: [AuthorizationService, AuthorizationGuard, EventService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

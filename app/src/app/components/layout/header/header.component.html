@@ -16,13 +16,20 @@
     </nav>
   </div>
 
-  <nav>
+  <nav *ngIf="!_authServer.loggedIn()">
     <ul class="header__userControll [ flex v-cnter font small ] ">
       <li>
         <a routerLink="/login" routerLinkActive="active">Login</a>
       </li>
       <li>
         <a routerLink="/registration" routerLinkActive="active">Registration</a>
+      </li>
+    </ul>
+  </nav>
+  <nav *ngIf="_authServer.loggedIn()">
+    <ul class="header__userControll [ flex v-cnter font small ] ">
+      <li>
+        <a routerLink="/registration" routerLinkActive="active" (click)="_authServer.logoutUser()">Logout</a>
       </li>
     </ul>
   </nav>
