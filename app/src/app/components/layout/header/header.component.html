@@ -9,7 +9,7 @@
         <li>
           <a routerLink="/welcome" routerLinkActive="active">Welcome</a>
         </li>
-        <li>
+        <li *ngIf="_authServer.loggedIn()">
           <a routerLink="/admin" routerLinkActive="active">Admin</a>
         </li>
       </ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from '../../services/event.service';
+import {AuthorizationService} from '../../services/authorization.service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,7 +11,7 @@ export class WelcomeComponent implements OnInit {
 
   users = [];
 
-  constructor(private _eventService: EventService) {
+  constructor(private _eventService: EventService, private _authServer: AuthorizationService) {
   }
 
   ngOnInit() {
