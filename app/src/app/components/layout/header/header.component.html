@@ -28,6 +28,9 @@
   </nav>
   <nav *ngIf="_authServer.loggedIn()">
     <ul class="header__userControll [ flex v-cnter font small ] ">
+      <li *ngIf="_authServer.userName()">
+        {{_authServer.userName()}}
+      </li>
       <li>
         <a routerLink="/registration" routerLinkActive="active" (click)="_authServer.logoutUser()">Logout</a>
       </li>

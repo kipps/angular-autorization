@@ -8,14 +8,14 @@ import {EventService} from '../../services/event.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  events = [];
+  users = [];
 
   constructor(private _eventService: EventService) {
   }
 
   ngOnInit() {
     this._eventService.getEvents()
-      .subscribe(res => this.events = res, err => console.error(err));
+      .subscribe(res => this.users = res, err => console.error(err));
   }
 
 }

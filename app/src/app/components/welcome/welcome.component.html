@@ -1,1 +1,10 @@
-<p>welcome works!</p>
+<div>
+  <header class="mb-32">
+    <h2 class="title">Users list</h2>
+  </header>
+</div>
+<ul>
+  <li *ngFor="let user of users" class="mb-16">
+    {{user.email}}
+  </li>
+</ul>

@@ -35,4 +35,8 @@ export class AuthorizationService {
     localStorage.removeItem('token');
     this._router.navigate(['/']);
   }
+
+  userName() {
+    return localStorage.getItem('user');
+  }
 }

@@ -18,13 +18,12 @@ import {HeaderComponent} from './components/layout/header/header.component';
 import {FooterComponent} from './components/layout/footer/footer.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {LoginComponent} from './components/login/login.component';
-import {EventsComponent} from './components/events/events.component';
 import {AuthorizationService} from './services/authorization.service';
 import {EventService} from './services/event.service';
 import {AuthorizationGuard} from './guards/authorization.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service';
-import { AdminComponent } from './components/admin/admin.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import {AdminComponent} from './components/admin/admin.component';
+import {WelcomeComponent} from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -34,7 +33,6 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     FooterComponent,
     RegistrationComponent,
     LoginComponent,
-    EventsComponent,
     AdminComponent,
     WelcomeComponent
   ],
