@@ -75,7 +75,8 @@ router.get('/welcome', (req, res) => {
 
 
 router.get('/admin', verifyToken, (req, res) => {
-  let users = User;
-  res.json(users);
+  mongoose.model('user').find(function (err, users) {
+    res.send(users);
+  })
 });
 module.exports = router;

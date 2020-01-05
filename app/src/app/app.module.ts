@@ -12,6 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 // custom components
 import {HeaderComponent} from './components/layout/header/header.component';
@@ -46,7 +47,8 @@ import {WelcomeComponent} from './components/welcome/welcome.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [AuthorizationService, AuthorizationGuard, EventService,
     {

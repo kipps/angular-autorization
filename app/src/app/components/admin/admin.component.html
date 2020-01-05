@@ -1,1 +1,20 @@
-<p>admin works!</p>
+<div>
+  <header class="mb-32">
+    <h2 class="title">Users list</h2>
+  </header>
+
+  <form class="form">
+    <div class="mb-32">
+
+      <mat-form-field>
+        <mat-label>Choose user</mat-label>
+        <mat-select [(value)]="userSet">
+          <mat-option *ngFor="let user of users" [(value)]="user" name="email">
+            {{user.email}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button (click)="loginUser()" mat-flat-button color="accent">Choose</button>
+  </form>
+</div>
