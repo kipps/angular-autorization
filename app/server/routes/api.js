@@ -67,56 +67,13 @@ router.post('/login', (req, res) => {
   });
 });
 
-router.get('/events', (req, res) => {
-  let events = [
-    {
-      "id": "1",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "2",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "3",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "4",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "5",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "6",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    },
-    {
-      "id": "7",
-      "name": "Auto Expo",
-      "description": "Some text description",
-      "date": "2019-04-23T18:25:43.511Z"
-    }
-  ];
-  res.json(events);
+router.get('/welcome', (req, res) => {
+  let users = req.body;
+  res.json(users);
 });
 
 
-router.get('/special', verifyToken, (req, res) => {
+router.get('/admin', verifyToken, (req, res) => {
   let events = [
     {
       "id": "1",

@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {EventService} from '../../services/event.service';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.scss']
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.scss']
 })
-export class EventsComponent implements OnInit {
+export class WelcomeComponent implements OnInit {
 
   events = [];
 
@@ -17,6 +17,5 @@ export class EventsComponent implements OnInit {
     this._eventService.getEvents()
       .subscribe(res => this.events = res, err => console.error(err));
   }
-
 
 }

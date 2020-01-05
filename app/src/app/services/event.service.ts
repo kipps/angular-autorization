@@ -6,17 +6,18 @@ import {HttpClient} from '@angular/common/http';
 })
 export class EventService {
 
-  private _eventsUrl = 'http://localhost:3333/api/events';
-  private _specialEventsUrl = 'http://localhost:3333/api/special';
+  url = 'http://localhost:3333/api';
+  private _welcomeUrl = `${this.url}/welcome`;
+  private _adminUrl = `${this.url}/admin`;
 
   constructor(private http: HttpClient) { }
 
   getEvents() {
-    return this.http.get<any>(this._eventsUrl);
+    return this.http.get<any>(this._welcomeUrl);
   }
 
   getSpecialEvents() {
-    return this.http.get<any>(this._specialEventsUrl);
+    return this.http.get<any>(this._adminUrl);
   }
 
 }

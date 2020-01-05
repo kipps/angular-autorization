@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {EventService} from '../../services/event.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-special-events',
-  templateUrl: './special-events.component.html',
-  styleUrls: ['./special-events.component.scss']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss']
 })
-export class SpecialEventsComponent implements OnInit {
+export class AdminComponent implements OnInit {
 
   specialEvents = [];
 
