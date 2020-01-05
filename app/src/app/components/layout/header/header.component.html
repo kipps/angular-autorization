@@ -7,22 +7,32 @@
     <nav>
       <ul class="header__navigation [ flex v-center mr-32 ] ">
         <li>
-          <a routerLink="/events" routerLinkActive="active">Events</a>
+          <a routerLink="/welcome" routerLinkActive="active">Welcome</a>
         </li>
-        <li>
-          <a routerLink="/special" routerLinkActive="active">Users</a>
+        <li *ngIf="_authServer.loggedIn()">
+          <a routerLink="/admin" routerLinkActive="active">Admin</a>
         </li>
       </ul>
     </nav>
   </div>
 
-  <nav>
+  <nav *ngIf="!_authServer.loggedIn()">
     <ul class="header__userControll [ flex v-cnter font small ] ">
       <li>
         <a routerLink="/login" routerLinkActive="active">Login</a>
       </li>
       <li>
         <a routerLink="/registration" routerLinkActive="active">Registration</a>
+      </li>
+    </ul>
+  </nav>
+  <nav *ngIf="_authServer.loggedIn()">
+    <ul class="header__userControll [ flex v-cnter font small ] ">
+      <li *ngIf="_authServer.userName()">
+        {{_authServer.userName()}}
+      </li>
+      <li>
+        <a routerLink="/registration" routerLinkActive="active" (click)="_authServer.logoutUser()">Logout</a>
       </li>
     </ul>
   </nav>

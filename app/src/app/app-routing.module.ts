@@ -1,24 +1,26 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {EventsComponent} from './components/events/events.component';
-import {SpecialEventsComponent} from './components/special-events/special-events.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
+import {AuthorizationGuard} from './guards/authorization.guard';
+import {AdminComponent} from './components/admin/admin.component';
+import {WelcomeComponent} from './components/welcome/welcome.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/welcome',
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventsComponent
+    path: 'welcome',
+    component: WelcomeComponent
   },
   {
-    path: 'special',
-    component: SpecialEventsComponent
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthorizationGuard]
   },
   {
     path: 'login',

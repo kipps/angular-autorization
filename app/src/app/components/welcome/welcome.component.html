@@ -1,0 +1,32 @@
+<div>
+  <header class="mb-32">
+    <h2 class="title text center">Welcome to my application</h2>
+  </header>
+
+  <section class="mb-40" *ngIf="!_authServer.loggedIn()">
+    <p>
+      You can use <a class="link" routerLink="/registration">this link</a> for registration to the app or you can <a
+      class="link" routerLink="/login">login</a> to the app if you have an account.
+    </p>
+    <p>
+      Additionally, you can see full list of users in a data base bellow of this text.
+    </p>
+  </section>
+
+
+  <section class="mb-40" *ngIf="_authServer.loggedIn()">
+    <p>
+      You are have an access to the project.
+    </p>
+  </section>
+
+  <footer>
+    <h4 class="mb-24 title small">List of users</h4>
+    <ul class="list">
+      <li *ngFor="let user of users" class="mb-16">
+        {{user.email}}
+      </li>
+    </ul>
+  </footer>
+</div>
+

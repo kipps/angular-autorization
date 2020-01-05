@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
-import {AuthorizationServiceService} from '../../services/authorization-service.service';
+import {AuthorizationService} from '../../services/authorization.service';
 
 
 @Component({
@@ -21,14 +22,22 @@ export class LoginComponent implements OnInit {
     Validators.required,
   ]);
 
-  constructor(private _auth: AuthorizationServiceService) { }
+  constructor(private _auth: AuthorizationService, private _router: Router) {
+  }
 
   ngOnInit() {
   }
 
   loginUser() {
     this._auth.loginUser(this.loginUserData)
-      .subscribe( res => console.log(res), err => console.log(err));
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('user', res.user.email);
+          this._router.navigate(['/admin']);
+        },
+        err => console.log(err));
   }
 
 }
