@@ -27,16 +27,19 @@ export class AuthorizationService {
     return !!localStorage.getItem('token');
   }
 
+  // Method adds token to localstorage
   getToken() {
     return localStorage.getItem('token');
   }
 
+  // All data remove from localstorage
   logoutUser() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this._router.navigate(['/']);
   }
 
+  // Method adds user name to header
   userName() {
     return localStorage.getItem('user');
   }

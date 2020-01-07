@@ -14,6 +14,8 @@ mongoose.connect(db, err => {
   }
 });
 
+
+// This methods need for verify token between server and browser
 function verifyToken(req, res, next) {
   if (!req.headers.authorization) {
     return res.status(401).send('Unauthorized request');
@@ -66,6 +68,8 @@ router.post('/login', (req, res) => {
     }
   });
 });
+
+// Those methods need for GET list of users from db
 
 router.get('/welcome', (req, res) => {
   mongoose.model('user').find(function (err, users) {
