@@ -4,13 +4,19 @@
   </header>
 
   <section class="mb-40" *ngIf="!_authServer.loggedIn()">
-    <p>
-      You can use <a class="link" routerLink="/registration">this link</a> for registration to the app or you can <a
-      class="link" routerLink="/login">login</a> to the app if you have an account.
-    </p>
-    <p>
-      Additionally, you can see full list of users in a data base bellow of this text.
-    </p>
+    <div class="mb-32">
+      <p>
+        You can use <a class="link" routerLink="/registration">this link</a> for registration to the app or you can <a
+        class="link" routerLink="/login">login</a> to the app if you have an account.
+      </p>
+      <p>
+        Additionally, you can see full list of users in a data base bellow of this text.
+      </p>
+    </div>
+
+    <div>
+      <app-login></app-login>
+    </div>
   </section>
 
 
