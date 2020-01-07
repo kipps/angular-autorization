@@ -33,6 +33,7 @@ export class AuthorizationService {
 
   logoutUser() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this._router.navigate(['/']);
   }
 

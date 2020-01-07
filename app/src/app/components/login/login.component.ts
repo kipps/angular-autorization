@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
 import {AuthorizationService} from '../../services/authorization.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          localStorage.setItem('user', res.user.email);
           this._router.navigate(['/admin']);
         },
         err => console.log(err));

@@ -33,6 +33,9 @@
     }
 
     a {
+      display: inline-block;
+      height: 16px;
+      outline: none;
 
       &.active {
         position: relative;

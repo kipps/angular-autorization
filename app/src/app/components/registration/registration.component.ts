@@ -33,6 +33,7 @@ export class RegistrationComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
+          localStorage.setItem('user', res.user.email);
           this._router.navigate(['/admin']);
         },
           err => console.log(err));
